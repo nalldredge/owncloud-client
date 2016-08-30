@@ -46,6 +46,12 @@ bool Capabilities::sharePublicLink() const
     }
 }
 
+bool Capabilities::bundledRequest() const
+{
+    //TODO this should be obtained from server, for now assume it is enabled always
+    return true;
+}
+
 bool Capabilities::sharePublicLinkAllowUpload() const
 {
     return  _capabilities["files_sharing"].toMap()["public"].toMap()["upload"].toBool();
